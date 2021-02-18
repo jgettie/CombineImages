@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombineImages", "CombineImages\CombineImages.csproj", "{EAE96CEC-1074-4056-A74D-AAF6133FEB65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAE96CEC-1074-4056-A74D-AAF6133FEB65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAE96CEC-1074-4056-A74D-AAF6133FEB65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAE96CEC-1074-4056-A74D-AAF6133FEB65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAE96CEC-1074-4056-A74D-AAF6133FEB65}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DAE6846E-06C4-4899-A86E-A7E31911EB84}
+	EndGlobalSection
+EndGlobal

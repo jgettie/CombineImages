@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -120,6 +121,7 @@ namespace CombineImages
             }
 
             bitmap.Save(TargetFileName);
+            Process.Start(TargetFileName);
         }
 
         private void CombineImagesOfDifferentSizes(List<Bitmap> images)
@@ -152,6 +154,7 @@ namespace CombineImages
             }
 
             bitmap.Save(TargetFileName);
+            Process.Start(TargetFileName);
         }
     }
 }

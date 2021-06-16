@@ -30,33 +30,36 @@ namespace CombineImages
         private void InitializeComponent()
         {
             this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.btnChooseImages = new System.Windows.Forms.Button();
+            this.btnAddImages = new System.Windows.Forms.Button();
             this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.btnCombineImages = new System.Windows.Forms.Button();
             this.spcMain = new System.Windows.Forms.SplitContainer();
             this.grpImages = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lstImages = new System.Windows.Forms.ListBox();
             this.grpSelectedImage = new System.Windows.Forms.GroupBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tslblWidth = new System.Windows.Forms.ToolStripLabel();
             this.tslblHeight = new System.Windows.Forms.ToolStripLabel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.picImage = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnClearList = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
             this.spcMain.SuspendLayout();
             this.grpImages.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.grpSelectedImage.SuspendLayout();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // OpenFileDialog
@@ -65,16 +68,16 @@ namespace CombineImages
             this.OpenFileDialog.Multiselect = true;
             this.OpenFileDialog.Title = "Choose Images";
             // 
-            // btnChooseImages
+            // btnAddImages
             // 
-            this.btnChooseImages.AutoSize = true;
-            this.btnChooseImages.Location = new System.Drawing.Point(304, 424);
-            this.btnChooseImages.Name = "btnChooseImages";
-            this.btnChooseImages.Size = new System.Drawing.Size(90, 23);
-            this.btnChooseImages.TabIndex = 2;
-            this.btnChooseImages.Text = "Choose Images";
-            this.btnChooseImages.UseVisualStyleBackColor = true;
-            this.btnChooseImages.Click += new System.EventHandler(this.btnChooseImages_Click);
+            this.btnAddImages.AutoSize = true;
+            this.btnAddImages.Location = new System.Drawing.Point(3, 3);
+            this.btnAddImages.Name = "btnAddImages";
+            this.btnAddImages.Size = new System.Drawing.Size(90, 23);
+            this.btnAddImages.TabIndex = 2;
+            this.btnAddImages.Text = "Add Images";
+            this.btnAddImages.UseVisualStyleBackColor = true;
+            this.btnAddImages.Click += new System.EventHandler(this.btnAddImages_Click);
             // 
             // SaveFileDialog
             // 
@@ -85,7 +88,7 @@ namespace CombineImages
             // btnCombineImages
             // 
             this.btnCombineImages.AutoSize = true;
-            this.btnCombineImages.Location = new System.Drawing.Point(400, 424);
+            this.btnCombineImages.Location = new System.Drawing.Point(352, 424);
             this.btnCombineImages.Name = "btnCombineImages";
             this.btnCombineImages.Size = new System.Drawing.Size(95, 23);
             this.btnCombineImages.TabIndex = 3;
@@ -95,7 +98,7 @@ namespace CombineImages
             // 
             // spcMain
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.spcMain, 4);
+            this.tableLayoutPanel1.SetColumnSpan(this.spcMain, 3);
             this.spcMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.spcMain.Location = new System.Drawing.Point(3, 3);
             this.spcMain.Name = "spcMain";
@@ -113,7 +116,7 @@ namespace CombineImages
             // 
             // grpImages
             // 
-            this.grpImages.Controls.Add(this.lstImages);
+            this.grpImages.Controls.Add(this.tableLayoutPanel2);
             this.grpImages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpImages.Location = new System.Drawing.Point(0, 0);
             this.grpImages.Name = "grpImages";
@@ -122,13 +125,31 @@ namespace CombineImages
             this.grpImages.TabStop = false;
             this.grpImages.Text = "Images";
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.btnClearList, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnAddImages, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lstImages, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(258, 396);
+            this.tableLayoutPanel2.TabIndex = 1;
+            // 
             // lstImages
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.lstImages, 2);
             this.lstImages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstImages.FormattingEnabled = true;
-            this.lstImages.Location = new System.Drawing.Point(3, 16);
+            this.lstImages.Location = new System.Drawing.Point(3, 32);
             this.lstImages.Name = "lstImages";
-            this.lstImages.Size = new System.Drawing.Size(258, 396);
+            this.lstImages.Size = new System.Drawing.Size(252, 361);
             this.lstImages.TabIndex = 0;
             this.lstImages.SelectedIndexChanged += new System.EventHandler(this.lstImages_SelectedIndexChanged);
             // 
@@ -186,25 +207,6 @@ namespace CombineImages
             this.tslblHeight.Size = new System.Drawing.Size(46, 22);
             this.tslblHeight.Text = "Height:";
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.btnChooseImages, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.spcMain, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnCombineImages, 2, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
-            this.tableLayoutPanel1.TabIndex = 5;
-            // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
@@ -217,13 +219,42 @@ namespace CombineImages
             // 
             // picImage
             // 
-            this.picImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picImage.Location = new System.Drawing.Point(0, 0);
+            this.picImage.Location = new System.Drawing.Point(8, 8);
             this.picImage.Name = "picImage";
-            this.picImage.Size = new System.Drawing.Size(520, 371);
+            this.picImage.Size = new System.Drawing.Size(120, 120);
             this.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picImage.TabIndex = 1;
+            this.picImage.TabIndex = 3;
             this.picImage.TabStop = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.AutoScroll = true;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.spcMain, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnCombineImages, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.TabIndex = 5;
+            // 
+            // btnClearList
+            // 
+            this.btnClearList.AutoSize = true;
+            this.btnClearList.Location = new System.Drawing.Point(99, 3);
+            this.btnClearList.Name = "btnClearList";
+            this.btnClearList.Size = new System.Drawing.Size(73, 23);
+            this.btnClearList.TabIndex = 3;
+            this.btnClearList.Text = "Clear List";
+            this.btnClearList.UseVisualStyleBackColor = true;
+            this.btnClearList.Click += new System.EventHandler(this.btnClearList_Click);
             // 
             // MainForm
             // 
@@ -238,6 +269,8 @@ namespace CombineImages
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).EndInit();
             this.spcMain.ResumeLayout(false);
             this.grpImages.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.grpSelectedImage.ResumeLayout(false);
             this.toolStripContainer1.BottomToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.BottomToolStripPanel.PerformLayout();
@@ -246,18 +279,18 @@ namespace CombineImages
             this.toolStripContainer1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.OpenFileDialog OpenFileDialog;
-        private System.Windows.Forms.Button btnChooseImages;
+        private System.Windows.Forms.Button btnAddImages;
         private System.Windows.Forms.SaveFileDialog SaveFileDialog;
         private System.Windows.Forms.Button btnCombineImages;
         private System.Windows.Forms.SplitContainer spcMain;
@@ -271,6 +304,8 @@ namespace CombineImages
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox picImage;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Button btnClearList;
     }
 }
 

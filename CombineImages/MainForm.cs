@@ -12,22 +12,26 @@ namespace CombineImages
             InitializeComponent();
         }
 
-        private void btnChooseImages_Click(object sender, EventArgs e)
+        private void btnAddImages_Click(object sender, EventArgs e)
         {
             var result = OpenFileDialog.ShowDialog(this);
             if (result == DialogResult.OK)
             {
-                lstImages.Items.Clear();
                 foreach (var fileName in OpenFileDialog.FileNames)
                     lstImages.Items.Add(fileName);
             }
+        }
+
+        private void btnClearList_Click(object sender, EventArgs e)
+        {
+            lstImages.Items.Clear();
         }
 
         private void btnCombineImages_Click(object sender, EventArgs e)
         {
             if (lstImages.Items.Count == 0)
             {
-                MessageBox.Show(this, "You must choose some images first.", "Combine Images");
+                MessageBox.Show(this, "You must add some images first.", "Combine Images");
                 return;
             }
 
@@ -83,7 +87,6 @@ namespace CombineImages
         private void lstImages_SelectedIndexChanged(object sender, EventArgs e)
         {
             var fileName = (string)lstImages.SelectedItem;
-            grpSelectedImage.Text = fileName;
             var image = Image.FromFile(fileName);
             tslblWidth.Text = $"Width: {image.Width}";
             tslblHeight.Text = $"Height: {image.Height}";

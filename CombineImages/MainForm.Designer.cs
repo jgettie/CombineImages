@@ -35,16 +35,16 @@ namespace CombineImages
             this.btnCombineImages = new System.Windows.Forms.Button();
             this.spcMain = new System.Windows.Forms.SplitContainer();
             this.grpImages = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpImageList = new System.Windows.Forms.TableLayoutPanel();
             this.lstImages = new System.Windows.Forms.ListBox();
             this.grpSelectedImage = new System.Windows.Forms.GroupBox();
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.ToolStripContainer = new System.Windows.Forms.ToolStripContainer();
+            this.ToolStrip = new System.Windows.Forms.ToolStrip();
             this.tslblWidth = new System.Windows.Forms.ToolStripLabel();
             this.tslblHeight = new System.Windows.Forms.ToolStripLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.ImagePanel = new System.Windows.Forms.Panel();
             this.picImage = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.btnClearList = new System.Windows.Forms.Button();
             this.tslblFileName = new System.Windows.Forms.ToolStripLabel();
             this.btnRemoveImage = new System.Windows.Forms.Button();
@@ -53,15 +53,15 @@ namespace CombineImages
             this.spcMain.Panel2.SuspendLayout();
             this.spcMain.SuspendLayout();
             this.grpImages.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.tlpImageList.SuspendLayout();
             this.grpSelectedImage.SuspendLayout();
-            this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
-            this.toolStripContainer1.ContentPanel.SuspendLayout();
-            this.toolStripContainer1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.ToolStripContainer.BottomToolStripPanel.SuspendLayout();
+            this.ToolStripContainer.ContentPanel.SuspendLayout();
+            this.ToolStripContainer.SuspendLayout();
+            this.ToolStrip.SuspendLayout();
+            this.ImagePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tlpMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // OpenFileDialog
@@ -101,7 +101,7 @@ namespace CombineImages
             // 
             // spcMain
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.spcMain, 3);
+            this.tlpMain.SetColumnSpan(this.spcMain, 3);
             this.spcMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.spcMain.Location = new System.Drawing.Point(3, 3);
             this.spcMain.Name = "spcMain";
@@ -119,7 +119,7 @@ namespace CombineImages
             // 
             // grpImages
             // 
-            this.grpImages.Controls.Add(this.tableLayoutPanel2);
+            this.grpImages.Controls.Add(this.tlpImageList);
             this.grpImages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpImages.Location = new System.Drawing.Point(0, 0);
             this.grpImages.Name = "grpImages";
@@ -128,29 +128,29 @@ namespace CombineImages
             this.grpImages.TabStop = false;
             this.grpImages.Text = "Images";
             // 
-            // tableLayoutPanel2
+            // tlpImageList
             // 
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.btnRemoveImage, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnClearList, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnAddImages, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lstImages, 0, 1);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(258, 396);
-            this.tableLayoutPanel2.TabIndex = 1;
+            this.tlpImageList.ColumnCount = 3;
+            this.tlpImageList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpImageList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpImageList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpImageList.Controls.Add(this.btnRemoveImage, 1, 0);
+            this.tlpImageList.Controls.Add(this.btnClearList, 2, 0);
+            this.tlpImageList.Controls.Add(this.btnAddImages, 0, 0);
+            this.tlpImageList.Controls.Add(this.lstImages, 0, 1);
+            this.tlpImageList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpImageList.Location = new System.Drawing.Point(3, 16);
+            this.tlpImageList.Name = "tlpImageList";
+            this.tlpImageList.RowCount = 2;
+            this.tlpImageList.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpImageList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpImageList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpImageList.Size = new System.Drawing.Size(258, 396);
+            this.tlpImageList.TabIndex = 1;
             // 
             // lstImages
             // 
-            this.tableLayoutPanel2.SetColumnSpan(this.lstImages, 3);
+            this.tlpImageList.SetColumnSpan(this.lstImages, 3);
             this.lstImages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstImages.FormattingEnabled = true;
             this.lstImages.Location = new System.Drawing.Point(3, 32);
@@ -161,7 +161,7 @@ namespace CombineImages
             // 
             // grpSelectedImage
             // 
-            this.grpSelectedImage.Controls.Add(this.toolStripContainer1);
+            this.grpSelectedImage.Controls.Add(this.ToolStripContainer);
             this.grpSelectedImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpSelectedImage.Location = new System.Drawing.Point(0, 0);
             this.grpSelectedImage.Name = "grpSelectedImage";
@@ -169,37 +169,37 @@ namespace CombineImages
             this.grpSelectedImage.TabIndex = 0;
             this.grpSelectedImage.TabStop = false;
             // 
-            // toolStripContainer1
+            // ToolStripContainer
             // 
             // 
-            // toolStripContainer1.BottomToolStripPanel
+            // ToolStripContainer.BottomToolStripPanel
             // 
-            this.toolStripContainer1.BottomToolStripPanel.Controls.Add(this.toolStrip1);
+            this.ToolStripContainer.BottomToolStripPanel.Controls.Add(this.ToolStrip);
             // 
-            // toolStripContainer1.ContentPanel
+            // ToolStripContainer.ContentPanel
             // 
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.panel1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(520, 371);
-            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer1.LeftToolStripPanelVisible = false;
-            this.toolStripContainer1.Location = new System.Drawing.Point(3, 16);
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(520, 396);
-            this.toolStripContainer1.TabIndex = 0;
-            this.toolStripContainer1.Text = "toolStripContainer1";
-            this.toolStripContainer1.TopToolStripPanelVisible = false;
+            this.ToolStripContainer.ContentPanel.Controls.Add(this.ImagePanel);
+            this.ToolStripContainer.ContentPanel.Size = new System.Drawing.Size(520, 371);
+            this.ToolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ToolStripContainer.LeftToolStripPanelVisible = false;
+            this.ToolStripContainer.Location = new System.Drawing.Point(3, 16);
+            this.ToolStripContainer.Name = "ToolStripContainer";
+            this.ToolStripContainer.RightToolStripPanelVisible = false;
+            this.ToolStripContainer.Size = new System.Drawing.Size(520, 396);
+            this.ToolStripContainer.TabIndex = 0;
+            this.ToolStripContainer.Text = "toolStripContainer1";
+            this.ToolStripContainer.TopToolStripPanelVisible = false;
             // 
-            // toolStrip1
+            // ToolStrip
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tslblWidth,
             this.tslblHeight,
             this.tslblFileName});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(163, 25);
-            this.toolStrip1.TabIndex = 0;
+            this.ToolStrip.Location = new System.Drawing.Point(3, 0);
+            this.ToolStrip.Name = "ToolStrip";
+            this.ToolStrip.Size = new System.Drawing.Size(163, 25);
+            this.ToolStrip.TabIndex = 0;
             // 
             // tslblWidth
             // 
@@ -213,15 +213,15 @@ namespace CombineImages
             this.tslblHeight.Size = new System.Drawing.Size(46, 22);
             this.tslblHeight.Text = "Height:";
             // 
-            // panel1
+            // ImagePanel
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.picImage);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(520, 371);
-            this.panel1.TabIndex = 0;
+            this.ImagePanel.AutoScroll = true;
+            this.ImagePanel.Controls.Add(this.picImage);
+            this.ImagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ImagePanel.Location = new System.Drawing.Point(0, 0);
+            this.ImagePanel.Name = "ImagePanel";
+            this.ImagePanel.Size = new System.Drawing.Size(520, 371);
+            this.ImagePanel.TabIndex = 0;
             // 
             // picImage
             // 
@@ -232,24 +232,24 @@ namespace CombineImages
             this.picImage.TabIndex = 3;
             this.picImage.TabStop = false;
             // 
-            // tableLayoutPanel1
+            // tlpMain
             // 
-            this.tableLayoutPanel1.AutoScroll = true;
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.spcMain, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnCombineImages, 1, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
-            this.tableLayoutPanel1.TabIndex = 5;
+            this.tlpMain.AutoScroll = true;
+            this.tlpMain.ColumnCount = 3;
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMain.Controls.Add(this.spcMain, 0, 0);
+            this.tlpMain.Controls.Add(this.btnCombineImages, 1, 1);
+            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMain.Location = new System.Drawing.Point(0, 0);
+            this.tlpMain.Name = "tlpMain";
+            this.tlpMain.RowCount = 2;
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpMain.Size = new System.Drawing.Size(800, 450);
+            this.tlpMain.TabIndex = 5;
             // 
             // btnClearList
             // 
@@ -286,7 +286,7 @@ namespace CombineImages
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tlpMain);
             this.Name = "MainForm";
             this.Text = "Combine Images";
             this.spcMain.Panel1.ResumeLayout(false);
@@ -294,21 +294,21 @@ namespace CombineImages
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).EndInit();
             this.spcMain.ResumeLayout(false);
             this.grpImages.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.tlpImageList.ResumeLayout(false);
+            this.tlpImageList.PerformLayout();
             this.grpSelectedImage.ResumeLayout(false);
-            this.toolStripContainer1.BottomToolStripPanel.ResumeLayout(false);
-            this.toolStripContainer1.BottomToolStripPanel.PerformLayout();
-            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
-            this.toolStripContainer1.ResumeLayout(false);
-            this.toolStripContainer1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.ToolStripContainer.BottomToolStripPanel.ResumeLayout(false);
+            this.ToolStripContainer.BottomToolStripPanel.PerformLayout();
+            this.ToolStripContainer.ContentPanel.ResumeLayout(false);
+            this.ToolStripContainer.ResumeLayout(false);
+            this.ToolStripContainer.PerformLayout();
+            this.ToolStrip.ResumeLayout(false);
+            this.ToolStrip.PerformLayout();
+            this.ImagePanel.ResumeLayout(false);
+            this.ImagePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tlpMain.ResumeLayout(false);
+            this.tlpMain.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -322,14 +322,14 @@ namespace CombineImages
         private System.Windows.Forms.GroupBox grpImages;
         private System.Windows.Forms.ListBox lstImages;
         private System.Windows.Forms.GroupBox grpSelectedImage;
-        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripContainer ToolStripContainer;
+        private System.Windows.Forms.ToolStrip ToolStrip;
         private System.Windows.Forms.ToolStripLabel tslblWidth;
         private System.Windows.Forms.ToolStripLabel tslblHeight;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TableLayoutPanel tlpMain;
+        private System.Windows.Forms.Panel ImagePanel;
         private System.Windows.Forms.PictureBox picImage;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tlpImageList;
         private System.Windows.Forms.Button btnClearList;
         private System.Windows.Forms.ToolStripLabel tslblFileName;
         private System.Windows.Forms.Button btnRemoveImage;

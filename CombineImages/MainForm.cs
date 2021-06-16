@@ -79,5 +79,15 @@ namespace CombineImages
 
             bitmap.Save(fileName);
         }
+
+        private void lstImages_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var fileName = (string)lstImages.SelectedItem;
+            grpSelectedImage.Text = fileName;
+            var image = Image.FromFile(fileName);
+            tslblWidth.Text = $"Width: {image.Width}";
+            tslblHeight.Text = $"Height: {image.Height}";
+            picImage.Image = image;
+        }
     }
 }

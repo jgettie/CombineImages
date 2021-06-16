@@ -50,6 +50,8 @@ namespace CombineImages
             Image prevImage = null;
             var areAllImagesTheSameSize = true;
 
+            ProgressBar.Maximum = SourceFileNames.Count * 2;
+
             foreach (var fileName in SourceFileNames)
             {
                 var image = new Bitmap(Image.FromFile(fileName));
@@ -64,6 +66,8 @@ namespace CombineImages
                 }
 
                 prevImage = image;
+
+                ProgressBar.Value++;
             }
 
             if (areAllImagesTheSameSize)
@@ -105,6 +109,8 @@ namespace CombineImages
                         }
                     }
 
+                    ProgressBar.Value++;
+
                     index++;
                     if (index >= images.Count)
                     {
@@ -132,6 +138,8 @@ namespace CombineImages
 
             int offset = 0;
 
+            ProgressBar.Maximum += images.Count;
+
             foreach (var image in images)
             {
                 for (int x = 0; x < image.Width; x++)
@@ -139,6 +147,8 @@ namespace CombineImages
                         bitmap.SetPixel(x + offset, y, image.GetPixel(x, y));
 
                 offset += image.Width;
+
+                ProgressBar.Value++;
             }
 
             bitmap.Save(TargetFileName);

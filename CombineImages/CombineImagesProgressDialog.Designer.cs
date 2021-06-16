@@ -30,16 +30,16 @@ namespace CombineImages
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.ProgressBar = new System.Windows.Forms.ProgressBar();
             this.CombineImagesTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // progressBar1
+            // ProgressBar
             // 
-            this.progressBar1.Location = new System.Drawing.Point(13, 13);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(559, 33);
-            this.progressBar1.TabIndex = 0;
+            this.ProgressBar.Location = new System.Drawing.Point(13, 13);
+            this.ProgressBar.Name = "ProgressBar";
+            this.ProgressBar.Size = new System.Drawing.Size(559, 33);
+            this.ProgressBar.TabIndex = 0;
             // 
             // CombineImagesTimer
             // 
@@ -51,7 +51,7 @@ namespace CombineImages
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 54);
             this.ControlBox = false;
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.ProgressBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "CombineImagesProgressDialog";
             this.ShowInTaskbar = false;
@@ -64,7 +64,7 @@ namespace CombineImages
 
         #endregion
 
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar ProgressBar;
         private System.Windows.Forms.Timer CombineImagesTimer;
     }
 }

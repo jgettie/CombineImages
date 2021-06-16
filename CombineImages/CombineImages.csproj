@@ -52,6 +52,12 @@
     <Compile Include="ChooseColumnsDialog.Designer.cs">
       <DependentUpon>ChooseColumnsDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="CombineImagesProgressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CombineImagesProgressDialog.Designer.cs">
+      <DependentUpon>CombineImagesProgressDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ChooseColumnsDialog.resx">
       <DependentUpon>ChooseColumnsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CombineImagesProgressDialog.resx">
+      <DependentUpon>CombineImagesProgressDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

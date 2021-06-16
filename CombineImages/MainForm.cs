@@ -22,6 +22,14 @@ namespace CombineImages
             }
         }
 
+        private void btnRemoveImage_Click(object sender, EventArgs e)
+        {
+            if (lstImages.SelectedItem != null)
+            {
+                lstImages.Items.Remove(lstImages.SelectedItem);
+            }
+        }
+
         private void btnClearList_Click(object sender, EventArgs e)
         {
             lstImages.Items.Clear();
@@ -86,11 +94,25 @@ namespace CombineImages
 
         private void lstImages_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var fileName = (string)lstImages.SelectedItem;
-            var image = Image.FromFile(fileName);
-            tslblWidth.Text = $"Width: {image.Width}";
-            tslblHeight.Text = $"Height: {image.Height}";
-            picImage.Image = image;
+            if (lstImages.SelectedItem == null)
+            {
+                return;
+            }
+
+            try
+            {
+                var fileName = (string)lstImages.SelectedItem;
+                var image = Image.FromFile(fileName);
+                picImage.Image = image;
+                tslblFileName.Text = fileName;
+                tslblFileName.ToolTipText = fileName;
+                tslblWidth.Text = $"Width: {image.Width}";
+                tslblHeight.Text = $"Height: {image.Height}";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, $"Could not open the file.\n{ex.Message}", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

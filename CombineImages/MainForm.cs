@@ -61,11 +61,77 @@ namespace CombineImages
         {
             var images = new List<Bitmap>();
 
+            Image prevImage = null;
+            var areAllImagesTheSameSize = true;
+
             foreach (var item in lstImages.Items)
             {
-                images.Add(new Bitmap(Image.FromFile((string)item)));
+                var image = new Bitmap(Image.FromFile((string)item));
+                images.Add(image);
+
+                if (prevImage != null && areAllImagesTheSameSize)
+                {
+                    if (image.Width != prevImage.Width || image.Height != prevImage.Height)
+                    {
+                        areAllImagesTheSameSize = false;
+                    }
+                }
+
+                prevImage = image;
             }
 
+            if (areAllImagesTheSameSize)
+            {
+                CombineImagesOfSameSize(fileName, images);
+            }
+            else
+            {
+                CombineImagesOfDifferentSizes(fileName, images);
+            }
+        }
+
+        private void CombineImagesOfSameSize(string fileName, List<Bitmap> images)
+        {
+            var numberOfColumns = ChooseColumnsDialog.ChooseColumnCount(this, images.Count);
+            var numberOfRows = images.Count / numberOfColumns;
+            if (images.Count % numberOfColumns != 0)
+            {
+                numberOfRows++;
+            }
+            var width = images[0].Width * numberOfColumns;
+            var height = images[0].Height * numberOfRows;
+
+            var bitmap = new Bitmap(width, height);
+
+            int index = 0;
+            for (int row = 0; row < numberOfRows; row++)
+            {
+                for (int col = 0; col < numberOfColumns; col++)
+                {
+                    var xOffset = col * images[index].Width;
+                    var yOffset = row * images[index].Height;
+
+                    for (int x = 0; x < images[index].Width; x++)
+                    {
+                        for (int y = 0; y < images[index].Height; y++)
+                        {
+                            bitmap.SetPixel(x + xOffset, y + yOffset, images[index].GetPixel(x, y));
+                        }
+                    }
+
+                    index++;
+                    if (index >= images.Count)
+                    {
+                        break;
+                    }
+                }
+            }
+
+            bitmap.Save(fileName);
+        }
+
+        private void CombineImagesOfDifferentSizes(string fileName, List<Bitmap> images)
+        {
             int width = 0;
             int height = 0;
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace CombineImages
@@ -75,7 +76,7 @@ namespace CombineImages
             try
             {
                 var fileName = (string)lstImages.SelectedItem;
-                var image = Image.FromFile(fileName);
+                var image = GetImageFromFile(fileName);
                 picImage.Image = image;
                 tslblFileName.Text = fileName;
                 tslblFileName.ToolTipText = fileName;
@@ -86,6 +87,14 @@ namespace CombineImages
             {
                 MessageBox.Show(this, $"Could not open the file.\n{ex.Message}", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private static Image GetImageFromFile(string fileName)
+        {
+            var stream = new FileStream(fileName, FileMode.Open);
+            var image = Image.FromStream(stream);
+            stream.Close();
+            return image;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -19,6 +20,15 @@ namespace CombineImages
             {
                 foreach (var fileName in OpenFileDialog.FileNames)
                     lstImages.Items.Add(fileName);
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (lstImages.SelectedItem != null)
+            {
+                var filename = (string)lstImages.SelectedItem;
+                Process.Start("mspaint", $"\"{filename}\"");
             }
         }
 

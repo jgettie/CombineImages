@@ -36,18 +36,19 @@ namespace CombineImages
             this.spcMain = new System.Windows.Forms.SplitContainer();
             this.grpImages = new System.Windows.Forms.GroupBox();
             this.tlpImageList = new System.Windows.Forms.TableLayoutPanel();
+            this.btnRemoveImage = new System.Windows.Forms.Button();
+            this.btnClearList = new System.Windows.Forms.Button();
             this.lstImages = new System.Windows.Forms.ListBox();
             this.grpSelectedImage = new System.Windows.Forms.GroupBox();
             this.ToolStripContainer = new System.Windows.Forms.ToolStripContainer();
             this.ToolStrip = new System.Windows.Forms.ToolStrip();
             this.tslblWidth = new System.Windows.Forms.ToolStripLabel();
             this.tslblHeight = new System.Windows.Forms.ToolStripLabel();
+            this.tslblFileName = new System.Windows.Forms.ToolStripLabel();
             this.ImagePanel = new System.Windows.Forms.Panel();
             this.picImage = new System.Windows.Forms.PictureBox();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
-            this.btnClearList = new System.Windows.Forms.Button();
-            this.tslblFileName = new System.Windows.Forms.ToolStripLabel();
-            this.btnRemoveImage = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -77,7 +78,7 @@ namespace CombineImages
             this.btnAddImages.Location = new System.Drawing.Point(3, 3);
             this.btnAddImages.Name = "btnAddImages";
             this.btnAddImages.Size = new System.Drawing.Size(36, 23);
-            this.btnAddImages.TabIndex = 2;
+            this.btnAddImages.TabIndex = 0;
             this.btnAddImages.Text = "Add";
             this.btnAddImages.UseVisualStyleBackColor = true;
             this.btnAddImages.Click += new System.EventHandler(this.btnAddImages_Click);
@@ -130,27 +131,52 @@ namespace CombineImages
             // 
             // tlpImageList
             // 
-            this.tlpImageList.ColumnCount = 3;
+            this.tlpImageList.ColumnCount = 4;
+            this.tlpImageList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpImageList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpImageList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpImageList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpImageList.Controls.Add(this.btnRemoveImage, 1, 0);
-            this.tlpImageList.Controls.Add(this.btnClearList, 2, 0);
+            this.tlpImageList.Controls.Add(this.btnEdit, 1, 0);
             this.tlpImageList.Controls.Add(this.btnAddImages, 0, 0);
             this.tlpImageList.Controls.Add(this.lstImages, 0, 1);
+            this.tlpImageList.Controls.Add(this.btnClearList, 3, 0);
+            this.tlpImageList.Controls.Add(this.btnRemoveImage, 2, 0);
             this.tlpImageList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpImageList.Location = new System.Drawing.Point(3, 16);
             this.tlpImageList.Name = "tlpImageList";
             this.tlpImageList.RowCount = 2;
             this.tlpImageList.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpImageList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpImageList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpImageList.Size = new System.Drawing.Size(258, 396);
             this.tlpImageList.TabIndex = 1;
             // 
+            // btnRemoveImage
+            // 
+            this.btnRemoveImage.AutoSize = true;
+            this.btnRemoveImage.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnRemoveImage.Location = new System.Drawing.Point(86, 3);
+            this.btnRemoveImage.Name = "btnRemoveImage";
+            this.btnRemoveImage.Size = new System.Drawing.Size(57, 23);
+            this.btnRemoveImage.TabIndex = 2;
+            this.btnRemoveImage.Text = "Remove";
+            this.btnRemoveImage.UseVisualStyleBackColor = true;
+            this.btnRemoveImage.Click += new System.EventHandler(this.btnRemoveImage_Click);
+            // 
+            // btnClearList
+            // 
+            this.btnClearList.AutoSize = true;
+            this.btnClearList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnClearList.Location = new System.Drawing.Point(149, 3);
+            this.btnClearList.Name = "btnClearList";
+            this.btnClearList.Size = new System.Drawing.Size(41, 23);
+            this.btnClearList.TabIndex = 3;
+            this.btnClearList.Text = "Clear";
+            this.btnClearList.UseVisualStyleBackColor = true;
+            this.btnClearList.Click += new System.EventHandler(this.btnClearList_Click);
+            // 
             // lstImages
             // 
-            this.tlpImageList.SetColumnSpan(this.lstImages, 3);
+            this.tlpImageList.SetColumnSpan(this.lstImages, 4);
             this.lstImages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstImages.FormattingEnabled = true;
             this.lstImages.Location = new System.Drawing.Point(3, 32);
@@ -192,6 +218,7 @@ namespace CombineImages
             // 
             // ToolStrip
             // 
+            this.ToolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tslblWidth,
             this.tslblHeight,
@@ -212,6 +239,12 @@ namespace CombineImages
             this.tslblHeight.Name = "tslblHeight";
             this.tslblHeight.Size = new System.Drawing.Size(46, 22);
             this.tslblHeight.Text = "Height:";
+            // 
+            // tslblFileName
+            // 
+            this.tslblFileName.Name = "tslblFileName";
+            this.tslblFileName.Size = new System.Drawing.Size(63, 22);
+            this.tslblFileName.Text = "File Name:";
             // 
             // ImagePanel
             // 
@@ -251,35 +284,17 @@ namespace CombineImages
             this.tlpMain.Size = new System.Drawing.Size(800, 450);
             this.tlpMain.TabIndex = 5;
             // 
-            // btnClearList
+            // btnEdit
             // 
-            this.btnClearList.AutoSize = true;
-            this.btnClearList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnClearList.Location = new System.Drawing.Point(108, 3);
-            this.btnClearList.Name = "btnClearList";
-            this.btnClearList.Size = new System.Drawing.Size(41, 23);
-            this.btnClearList.TabIndex = 3;
-            this.btnClearList.Text = "Clear";
-            this.btnClearList.UseVisualStyleBackColor = true;
-            this.btnClearList.Click += new System.EventHandler(this.btnClearList_Click);
-            // 
-            // tslblFileName
-            // 
-            this.tslblFileName.Name = "tslblFileName";
-            this.tslblFileName.Size = new System.Drawing.Size(63, 22);
-            this.tslblFileName.Text = "File Name:";
-            // 
-            // btnRemoveImage
-            // 
-            this.btnRemoveImage.AutoSize = true;
-            this.btnRemoveImage.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnRemoveImage.Location = new System.Drawing.Point(45, 3);
-            this.btnRemoveImage.Name = "btnRemoveImage";
-            this.btnRemoveImage.Size = new System.Drawing.Size(57, 23);
-            this.btnRemoveImage.TabIndex = 4;
-            this.btnRemoveImage.Text = "Remove";
-            this.btnRemoveImage.UseVisualStyleBackColor = true;
-            this.btnRemoveImage.Click += new System.EventHandler(this.btnRemoveImage_Click);
+            this.btnEdit.AutoSize = true;
+            this.btnEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEdit.Location = new System.Drawing.Point(45, 3);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(35, 23);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // MainForm
             // 
@@ -333,6 +348,7 @@ namespace CombineImages
         private System.Windows.Forms.Button btnClearList;
         private System.Windows.Forms.ToolStripLabel tslblFileName;
         private System.Windows.Forms.Button btnRemoveImage;
+        private System.Windows.Forms.Button btnEdit;
     }
 }
 

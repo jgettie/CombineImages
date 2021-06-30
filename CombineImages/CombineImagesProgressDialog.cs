@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace CombineImages
@@ -55,7 +56,7 @@ namespace CombineImages
 
             foreach (var fileName in SourceFileNames)
             {
-                var image = new Bitmap(Image.FromFile(fileName));
+                var image = new Bitmap(GetImageFromFile(fileName));
                 images.Add(image);
 
                 if (prevImage != null && areAllImagesTheSameSize)
@@ -79,6 +80,14 @@ namespace CombineImages
             {
                 CombineImagesOfDifferentSizes(images);
             }
+        }
+
+        private static Image GetImageFromFile(string fileName)
+        {
+            var stream = new FileStream(fileName, FileMode.Open);
+            var image = Image.FromStream(stream);
+            stream.Close();
+            return image;
         }
 
         private void CombineImagesOfSameSize(List<Bitmap> images)

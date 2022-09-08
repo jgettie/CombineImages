@@ -140,9 +140,9 @@ namespace CombineImages
 
             foreach (var image in images)
             {
-                width += image.Width;
-                if (image.Height > height)
-                    height = image.Height;
+                height += image.Height;
+                if (image.Width > width)
+                    width = image.Width;
             }
 
             var bitmap = new Bitmap(width, height);
@@ -155,9 +155,9 @@ namespace CombineImages
             {
                 for (int x = 0; x < image.Width; x++)
                     for (int y = 0; y < image.Height; y++)
-                        bitmap.SetPixel(x + offset, y, image.GetPixel(x, y));
+                        bitmap.SetPixel(x, y + offset, image.GetPixel(x, y));
 
-                offset += image.Width;
+                offset += image.Height;
 
                 ProgressBar.Value++;
             }
